@@ -1,20 +1,16 @@
-name: Jenkins CI Pipeline
-on:
-  push:
-    branches: [ main ]
-
+name: Java CI
+on: [push]
 jobs:
-  build:
+  jenkins-static-image-pipeline:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
-        uses: actions/checkout@v2 
-
-      - name: Run Jenkinsfile
-        uses:
+      - uses: actions/checkout@v2
+      - uses:
           jenkinsci/jfr-static-image-action@master
         with:
           command: run
           jenkinsfile: Jenkinsfile
           pluginstxt: plugins.txt
-          jcasc:jcasc: jcasc.yml
+          jcasc: jcasc.yml
+
+
