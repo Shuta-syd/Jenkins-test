@@ -1,7 +1,7 @@
 name: Jenkins CI Pipeline
 on: [push]
 jobs:
-  job-name:
+  jenkins-static-image-pipeline:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/jenkinsci/jenkinsfile-runner:master
